@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Page
-from .models import Carousel
+from .models import Page, Carousel
 
 # Register your models here.
 
