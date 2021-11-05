@@ -12,31 +12,36 @@
                     <tr>
                         <th scope="col">PK</th>
                         <th scope="col">Title</th>
+                        <th scope="col">Slug</th>
+                        <th scope="col">Content</th>
                         <th scope="col">Cover İmage</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
+
                     </tr>
                 </thead>
                 <tbody>
 
-                    {% for item in carousel %}
+                    {% for item in items %}
                     <tr>
                         <th scope="row">{{ item.pk }}</th>
                         <td>{{ item.title }}</td>
+                        <td>{{ item.slug }}</td>
+                        <td>{{ item.content }}</td>
                         <td>
-                            
-
                             {% if item.cover_image %}
-
                             <img src="{{ item.cover_image.url }}" class="w-25">
-                            
                             {% else %}
-                                
                                 Görsel Yok
-
                             {% endif %}
-
                         </td>
-                            <td><a href="{% url 'carousel_update' item.pk %}" class="btn btn-primary">Edit</a></td>
+                        <td>{{ item.status }}</td>
+                        <td>
+                            <a href="{% url 'carousel_update' item.pk %}" class="btn btn-primary">
+                                Edit
+                            </a>
+                        </td>
+
                      </tr>
                     {% endfor %}
 

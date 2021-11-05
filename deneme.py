@@ -1,6 +1,4 @@
 from page.models import Carousel
 import urllib
 
-f = Carousel.objects.first()
-print(f.title)
-
+print(Carousel.objects.filter(status="published").count())
